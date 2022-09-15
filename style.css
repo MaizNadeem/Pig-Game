@@ -1,3 +1,15 @@
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: rgba(255, 255, 255, 0.7);
+    inherits: false;
+}
+  
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: rgba(255, 255, 255, 0.4);
+    inherits: false;
+}
+
 body {
     box-sizing: border-box;
     background-color: black;
@@ -17,11 +29,14 @@ body {
 .container-bg {
     margin: 10px;
     position: relative;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.4) 50%);
+    background: linear-gradient(to right, var(--myColor1) 50%, var(--myColor2) 50%);
     width: 95vw;
     height: 80vh;
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+
+    transition: --myColor1 500ms ease-in-out;
+    transition: --myColor2 500ms ease-in-out;
 }
 
 .buttons {
@@ -117,11 +132,19 @@ h2 {
     font-weight: 400;
 }
 
-img {
+.dice {
     height: 80px;
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.2);
     margin-top: 17vh;
     margin-bottom: 10vh;
+    visibility: hidden;
+    scale: 1;
+
+    transition: scale 200ms ease-in-out;
+}
+
+.dice:hover {
+    scale: 1.1;
 }
 
 .new-game {
@@ -135,6 +158,52 @@ img {
 .hold {
     margin-bottom: 8vh;
 }
+
+
+
+
+.container-bg-temp {
+    --myColor1: rgba(255, 255, 255, 0.4);
+    --myColor2: rgba(255, 255, 255, 0.7);
+    content: 'ok';
+}
+.sc1 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+.cc1 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+.sc2 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+.cc2 {
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+
+.sc1-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+.cc1-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+.sc2-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+.cc2-temp {
+    opacity: 0.5;
+    transition: opacity 500ms ease-in-out;
+}
+
+
+
+
 
 
 @media (min-width: 920px) {
