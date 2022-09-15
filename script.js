@@ -103,4 +103,9 @@ newGame.addEventListener('click', () => {
     p2current.innerText = 0
     rollDice.style.pointerEvents = 'auto'
     hold.style.pointerEvents = 'auto'
+    containerBg.classList.remove('container-bg-temp')
+    sc2.classList.add('sc2-temp')
+    cc2.classList.add('cc2-temp')
+    sc1.classList.remove('sc1-temp')
+    cc1.classList.remove('cc1-temp')
 })
