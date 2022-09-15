@@ -61,7 +61,7 @@ hold.addEventListener('click', () => {
     if (current == 1) {
         p1score.innerText = Number(p1score.innerText) + Number(p1current.innerText)
         p1current.innerText = 0
-        if (p1score.innerText >= 10) {
+        if (p1score.innerText >= 100) {
             image.style.visibility = 'hidden'
             rollDice.style.pointerEvents = 'none'
             hold.style.pointerEvents = 'none'
@@ -78,7 +78,7 @@ hold.addEventListener('click', () => {
     else {
         p2score.innerText = Number(p2score.innerText) + Number(p2current.innerText)
         p2current.innerText = 0
-        if (p2score.innerText >= 10) {
+        if (p2score.innerText >= 100) {
             image.style.visibility = 'hidden'
             rollDice.style.pointerEvents = 'none'
             hold.style.pointerEvents = 'none'
